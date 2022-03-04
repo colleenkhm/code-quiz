@@ -53,4 +53,4 @@ startQuiz();
 6. addHighScore() function that prompts user to input initials and stores timeRemaining as score in viewHighScores object
 7. function that sorts variables in viewHighScores object in terms of highest-lowest
 8. event.preventDefault() in startQuiz() function to ensure that page does not reload when new question is revealed
-9. append so that high score list continues to add with each playthrough */
+9. append existing outside of startQuiz() function so that high score list continues to add with each playthrough */
