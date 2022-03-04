@@ -13,11 +13,39 @@
 <body>
     <!--nav bar for high scores and time left-->
     <header>
-        <a onclick="showHighScores()" id="view-high-scores">High Scores</a>
-        <div class="countdown"></div>
+        <h1 onclick="showHighScores()" id="view-high-scores">High Scores</h1>
+        <h1 class="countdown">Time
+            <div id="counter"></div>
+            <div id="timeLeft"></div>
+         </h1>
     </header>
     <!--rules-->
-    <section class="container" id="start-quiz">
+    <div class="container">
+        <section id="quiz-intro">Coding Quiz!
+            <p>You will have one minute to answer as many multiple choice questions about JavaScript as you can. Each wrong answer will result in 5 seconds being deducted from your time.</p>
+            <button class="btnOption" id="0">Start Quiz</button>
+        </section>
+
+        <section id="questions" class="hidden">
+            <div id ="question"></div>
+            <div class="options">
+                <button class="btnOption" id="0" onclick="checkAnswer('1')"></button>
+                <button class="btnOption" id="1" onclick="checkAnswer('2')"></button>
+                <button class="btnOption" id="2" onclick="checkAnswer('3')"></button>
+                <button class="btnOption" id="3" onclick="checkAnswer('4')"></button>
+            </div>
+            <div id="result"></div>
+        </section>
+
+        <section id="score" class="hidden">
+            <h1>Time's Up!</h1>
+            <div id="scoreElement"></div>
+            <p>Add initials to join scoreboard:</p>
+            <form><input type="text" id="name"></form>
+            <button id="submit">Submit</button>
+        </section>
+
+    </div>
         <!--start-->
         <h1>Coding Quiz!</h1>
         <div class="rules">

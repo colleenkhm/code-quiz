@@ -1,48 +1,60 @@
-//do not forget about event.preventDefault() for when user clicks question response
+const start = document.getElementById("start")
+const intro = document.getElementById()
+const counter = document.getElementById("counter")
+const 
+var timeLeft = 90;
 
-//use .textContent and .setAttribute to help with creating the content for new questions/loading it?
-// initial event that loads first question/starts countdown
-var startQuiz = function() {
-
-    //reload with different question/set of possible answers
-    question++
-}
-// questions/event listener for selecting answer
-var questions = [
-    prompt: "Arrays in JavaScript can be used to store ____." 
-
-    prompt: 
+// array of questions
+let questions = [
+    {
+        question: "Commonly used data types DO NOT include:",
+        btnOption1 : "Strings",
+        btnOption2 : "Booleans",
+        btnOption3 : "Alerts",
+        btnOption4 : "Numbers",
+        right : btnOption3
+    },
+    {
+        question: "The condition in an if/else statement is enclosed with ____.",
+        btnOption1 : "Quotes",
+        btnOption2 : "Curly Brackets",
+        btnOption3 : "Parenthesis",
+        btnOption4 : "Square Brackets",
+        right : btnOption3
+    },
+    {
+        question: "Arrays in JavaScript can be used to store:",
+        btnOption1 : "Numbers and Strings",
+        btnOption2 : "Other Arrays",
+        btnOption3 : "Booleans",
+        btnOption4 : "All of the above",
+        right : btnOption4
+    },
+    {
+        question: "String values must be enclosed within ___ when being assigned to variables.",
+        btnOption1 : "Commas",
+        btnOption2 : "Curly Brackets",
+        btnOption3 : "Quotes",
+        btnOption4 : "Parenthesis",
+        right : btnOption3
+    },
+    {
+        question: "A very useful tool during development and debugging for printing ",
+        btnOption1 : "JavaScript",
+        btnOption2 : "Terminal/Bash",
+        btnOption3 : "For Loops",
+        btnOption4 : "console.log()",
+        right : btnOption4
+    },
 ]
-var selectAnswer = function() {
-
-}
-// verify if answer is correct or incorrect (must be inside startQuiz function)
-if (playerAnswer != rightAnswer){
-    alert('Wrong!')
-    //function for subtracting 10 seconds from time goes here (timeRemaining-10)
-} else // alert right and continue loop/function for loading new question
-
-//when time runs out, endQuiz (if timeRemaining=0... or use while loop for countdown)
-var endQuiz = function() {
-
-}
-// calculate a final score based on time completed (high score=high time remaining)
-var finalScore = timeRemaining
-// store high scores/player initials
-
-// option to replay
-
-var addHighScore = function() {
-    //place to input initials
-    //append high score array to include this
+function countdown () {
+    timeLeft--
+    timer.innerHTML = secondsLeft
+    if(secondsLeft === 0){
+        clearInterval(timerId)
+    }
 }
 
-
-var showHighScores = function() {
-    //display high scores - give each entry a unique id and store as an object in this function?
-}
-
-startQuiz();
 
 /* what's needed:
 1. startQuiz() function that displays first question when start button is clicked
