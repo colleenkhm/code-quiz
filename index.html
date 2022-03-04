@@ -11,22 +11,25 @@
 </head>
 
 <body>
+    <!--nav bar for high scores and time left-->
     <header>
-        <div class="view-high-scores">High Scores</div>
+        <a onclick="showHighScores()" id="view-high-scores">High Scores</a>
         <div class="countdown"></div>
     </header>
     <!--rules-->
-    <section class="quiz" id="start-quiz">
+    <section class="container" id="start-quiz">
         <!--start-->
+        <h1>Coding Quiz!</h1>
         <div class="rules">
-            <p>You will have </p>
+            <p>You will have one minute to answer as many multiple choice questions about JavaScript as you can. Each wrong answer will result in 5 seconds being deducted from your time.</p>
         </div>
         <div>
-            <button class="btn" id="start-quiz">Start Quiz</button>
+            <button type="button" onclick=Quiz() id="start-quiz">Start Quiz</button>
         </div>
     </section>
 
-    <section class="quiz" id="quiz-questions">
+    <section class="container" id="quiz-questions">
+        <div class="question" id="quiz-question-id"></div>
 
     </section>
 
