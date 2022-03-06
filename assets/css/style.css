@@ -1,3 +1,31 @@
-header h1 {
-    display: inline;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 20px;
+    margin: 10px 20px;
+    color: purple;
+}
+
+header h1 .scoreboard {
+    justify-content: flex-start;
+    padding: 15px 20px;
+}
+
+header h1 .countdown {
+    justify-content: flex-end;
+}
+
+.container {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
 }

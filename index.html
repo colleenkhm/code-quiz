@@ -13,27 +13,26 @@
 <body>
     <!--nav bar for high scores and time left-->
     <header>
-        <h1 onclick="showHighScores()" id="view-high-scores">High Scores</h1>
-        <h1 class="countdown">Time
-            <div id="counter"></div>
-            <div id="timeLeft"></div>
-         </h1>
+        <a onclick="showHighScores()" id="scoreboard"> View Scoreboard</a>
+        <div>
+            <p>Time:</p>
+        </div>
     </header>
     <!--rules-->
     <div class="container">
-        <section id="quiz-intro">Coding Quiz!
+        <section id="quizRules">Coding Quiz!
             <p>You will have one minute to answer as many multiple choice questions about JavaScript as you can. Each wrong answer will result in 5 seconds being deducted from your time.</p>
-            <button class="btnOption" id="0">Start Quiz</button>
+            <button class="btnChoice" id="start">Start Quiz</button>
         </section>
 
         <section id="questions" class="hidden">
             <div id ="question"></div>
             <div class="options">
-                <button class="btnOption" id="0" onclick="checkAnswer('1')"></button>
-                <button class="btnOption" id="1" onclick="checkAnswer('2')"></button>
-                <button class="btnOption" id="2" onclick="checkAnswer('3')"></button>
-                <button class="btnOption" id="3" onclick="checkAnswer('4')"></button>
-            </div>
+                <button class="btnChoice" id="0" onclick="checkAnswer('1')"></button> </br>
+                <button class="btnChoice" id="1" onclick="checkAnswer('2')"></button> </br>
+                <button class="btnChoice" id="2" onclick="checkAnswer('3')"></button> </br>
+                <button class="btnChoice" id="3" onclick="checkAnswer('4')"></button> </br>
+            </div> 
             <div id="result"></div>
         </section>
 
@@ -44,17 +43,7 @@
             <form><input type="text" id="name"></form>
             <button id="submit">Submit</button>
         </section>
-
     </div>
-        <!--start-->
-        <h1>Coding Quiz!</h1>
-        <div class="rules">
-            <p>You will have one minute to answer as many multiple choice questions about JavaScript as you can. Each wrong answer will result in 5 seconds being deducted from your time.</p>
-        </div>
-        <div>
-            <button type="button" onclick=Quiz() id="start-quiz">Start Quiz</button>
-        </div>
-    </section>
 
     <section class="container" id="quiz-questions">
         <div class="question" id="quiz-question-id"></div>
