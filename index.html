@@ -13,16 +13,18 @@
 <body>
     <!--nav bar for high scores and time left-->
     <header>
-        <a onclick="showHighScores()" id="scoreboard"> View Scoreboard</a>
+        <a onclick="showHighScores()" id="high-scores"> View Scoreboard</a>
         <div>
-            <p>Time:</p>
+            <p>Time: </p>
+            <p id="countdown">60</p>
         </div>
     </header>
     <!--rules-->
     <div class="container">
-        <section id="quizRules">Coding Quiz!
-            <p>You will have one minute to answer as many multiple choice questions about JavaScript as you can. Each wrong answer will result in 5 seconds being deducted from your time.</p>
-            <button class="btnChoice" id="start">Start Quiz</button>
+        <section id="quizRules">
+            <h1>Coding Quiz!</h1>
+            <p>You will have one minute to answer as many multiple choice questions about JavaScript as you can. Each wrong answer will result in 5 seconds being deducted from your time. Your score will be determined by the time remaining when you finish the quiz, but feel free to retake it as many times as you'd like to try and improve your high score. Good luck!</p>
+            <button type="button" onclick="showQuiz()"id="start">Start Quiz</button>
         </section>
 
         <section id="questions" class="hidden">
@@ -36,19 +38,25 @@
             <div id="result"></div>
         </section>
 
-        <section id="score" class="hidden">
+        <section class="container hidden" id="end-quiz">
             <h1>Time's Up!</h1>
+            <p> 
+                "You finished with " 
+                <span id="time-remaining"></span>"."
+            </p>
             <div id="scoreElement"></div>
-            <p>Add initials to join scoreboard:</p>
+            <p>Enter initials to join scoreboard:</p>
             <form><input type="text" id="name"></form>
             <button id="submit">Submit</button>
         </section>
+
+        <section class="container hidden" id="scoreboard">
+            <h1>Scoreboard</h1>
+            <!--look back to taskinator for adding things to list/clearing-->
+            <button type="button" onclick="returnToRules()" id="home-page">Return to Quiz</button>
+
+        </section>
     </div>
-
-    <section class="container" id="quiz-questions">
-        <div class="question" id="quiz-question-id"></div>
-
-    </section>
 
     <div class="quiz-rules">
 
