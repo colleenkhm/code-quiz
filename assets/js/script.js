@@ -1,23 +1,37 @@
 // variables/constants
-const btnStart = document.getElementById("start");
-const score_counter = document.getElementById("counter");
-const btnOption1 = document.getElementById("0");
-const btnOption2 = document.getElementById("1");
-const btnOption3 = document.getElementById("2");
-const btnOption4 = document.getElementById("3");
-const timer = document.getElementById("timer");
+const btnStart = document.getElementById("#start");
+const btnOption1 = document.getElementById("#0");
+const btnOption2 = document.getElementById("#1");
+const btnOption3 = document.getElementById("#2");
+const btnOption4 = document.getElementById("#3");
+const timer = document.getElementById("#timer");
+const rules = document.getElementById("#quizRules");
+const questionsDisplay = document.getElementById("#questions");
+var questionDisplay = document.getElementById("#")
+
+
+// countdown timer
 var timeLeft = 60;
+var timerEnd = 0;
+var countdown = "";
+
+// questions/scoring
+var score = ""; // = time remaining?
+var question = "";
+var answerKey = [];
+var righAnswer = "";
 var initials = "";
 
+
 // array of questions
-let questions = [
+const questionsList = [
     {
         question: "Commonly used data types DO NOT include:",
-        btnChoice1 : "Strings",
-        btnChoice2 : "Booleans",
-        btnChoice3 : "Alerts",
-        btnChoice4 : "Numbers",
-        right : btnChoice3
+        btnChoice1: "Strings",
+        btnChoice2: "Booleans",
+        btnChoice3: "Alerts",
+        btnChoice4: "Numbers",
+        right: "btnChoice3"
     },
     {
         question: "The condition in an if/else statement is enclosed with ____.",
@@ -25,7 +39,7 @@ let questions = [
         btnChoice2 : "Curly Brackets",
         btnChoice3 : "Parenthesis",
         btnChoice4 : "Square Brackets",
-        right : btnChoice3
+        right : "btnChoice3"
     },
     {
         question: "Arrays in JavaScript can be used to store:",
@@ -33,7 +47,7 @@ let questions = [
         btnChoice2 : "Other Arrays",
         btnChoice3 : "Booleans",
         btnChoice4 : "All of the above",
-        right : btnChoice4
+        right : "btnChoice4"
     },
     {
         question: "String values must be enclosed within ___ when being assigned to variables.",
@@ -41,7 +55,7 @@ let questions = [
         btnChoice2 : "Curly Brackets",
         btnChoice3 : "Quotes",
         btnChoice4 : "Parenthesis",
-        right : btnChoice3
+        right : "btnChoice3"
     },
     {
         question: "A very useful tool during development and debugging for printing ",
@@ -49,29 +63,73 @@ let questions = [
         btnChoice2 : "Terminal/Bash",
         btnChoice3 : "For Loops",
         btnChoice4 : "console.log()",
-        right : btnChoice4
+        right : "btnChoice4"
     },
 ]
 
+// function to hide everything from the displayed question
+// function removeChildren(parent) {
+//     while (parent.firstChild) {
+//         parent.removeChild(parent.firstChild);
+//     }
+// }
 // function to display new question on page
 function showQuestion() {
-    var q = questions[currentQuestion];
+    var q = questionsList[currentQuestion];
 
     question.innerHTML = "<p>" + q.question + "</p>"
 }
-var finalQuestion = questions.length - 1;
+
+// function to show selected element/hide others
+function revealQuiz() {
+
+    for(var i = 0; i < questionsList.length; i++) {
+        if(question !== questionsList[i]) {
+            questions.classList.add("hidden")
+        }
+        else {
+            questions.classList.remove("hidden");
+        }
+    }
+};
+// function to display quiz/hide rules
+// function showQuiz() {
+//     revealElement()
+// };
+
+
+// function to display new question on page
+var finalQuestion = questionsList.length - 1;
 var currentQuestion = 0;
 var count = 0;
 var questionDuration = 10;
 
 function startQuiz() {
-    quizRules.classList.add("hidden");
-    questions.classList.remove("hidden");
+    console.log("quiz has started")
+    quizRules.classList.add("hidden")
+    questions.classList.remove("hidden")
+    revealQuiz();
+    showQuestion();
+    // for(var i=0; i < questions.length; i++) {
+    //     var response = '';
+    //     if (response === questions[i]) {
+            
+    //     }
+    //         question++;
+    //     } else {
+
+    //     }
+    // }
+
+}
+
+function showHighScores() {
+    console.log("it works");
 }
 
 // event listener to start quiz
-start.addEventListener('click', startQuiz());
-
+// btnStart.addEventListener('click', startQuiz());
+highScores.addEventListener('click', showHighScores());
 
 function countdown() {
     timeLeft--

@@ -13,22 +13,22 @@
 <body>
     <!--nav bar for high scores and time left-->
     <header>
-        <a onclick="showHighScores()" id="high-scores"> View Scoreboard</a>
+        <a onclick="showHighScores()" id="highScores"> View Scoreboard</a>
         <div>
             <p>Time: </p>
             <p id="countdown">60</p>
         </div>
     </header>
     <!--rules-->
-    <div class="container">
-        <section id="quizRules">
+    <div class="container" id="quizRules">
+        <section>
             <h1>Coding Quiz!</h1>
             <p>You will have one minute to answer as many multiple choice questions about JavaScript as you can. Each wrong answer will result in 5 seconds being deducted from your time. Your score will be determined by the time remaining when you finish the quiz, but feel free to retake it as many times as you'd like to try and improve your high score. Good luck!</p>
-            <button type="button" onclick="showQuiz()"id="start">Start Quiz</button>
+            <button type="button" onclick="startQuiz()" id="start_btn">Start Quiz</button>
         </section>
 
         <section id="questions" class="hidden">
-            <div id ="question"></div>
+            <div id ="question">It's not hidden!</div>
             <div class="options">
                 <button class="btnChoice" id="0" onclick="checkAnswer('1')"></button> </br>
                 <button class="btnChoice" id="1" onclick="checkAnswer('2')"></button> </br>
@@ -38,19 +38,19 @@
             <div id="result"></div>
         </section>
 
-        <section class="container hidden" id="end-quiz">
+        <section class="hidden" id="end-quiz">
             <h1>Time's Up!</h1>
             <p> 
                 "You finished with " 
                 <span id="time-remaining"></span>"."
             </p>
-            <div id="scoreElement"></div>
+            <div id="scoreSubmit"></div>
             <p>Enter initials to join scoreboard:</p>
             <form><input type="text" id="name"></form>
             <button id="submit">Submit</button>
         </section>
 
-        <section class="container hidden" id="scoreboard">
+        <section class="hidden" id="scoreboard">
             <h1>Scoreboard</h1>
             <!--look back to taskinator for adding things to list/clearing-->
             <button type="button" onclick="returnToRules()" id="home-page">Return to Quiz</button>
@@ -58,15 +58,8 @@
         </section>
     </div>
 
-    <div class="quiz-rules">
-
-    </div>
-    <main>
-
-    </main>
-
     <footer>
-        &copy;2022 by Colleen Murray
+        Made in 2022 by Colleen Murray
     </footer>
     <script src="assets\js\script.js"></script>
 </body>
