@@ -16,7 +16,7 @@
         <a onclick="showHighScores()" id="highScores"> View Scoreboard</a>
         <div>
             <p>Time: </p>
-            <p id="countdown">60</p>
+            <p id="countdown"></p>
         </div>
     </header>
     <!--rules-->
@@ -26,37 +26,37 @@
             <p>You will have one minute to answer as many multiple choice questions about JavaScript as you can. Each wrong answer will result in 5 seconds being deducted from your time. Your score will be determined by the time remaining when you finish the quiz, but feel free to retake it as many times as you'd like to try and improve your high score. Good luck!</p>
             <button type="button" onclick="startQuiz()" id="start_btn">Start Quiz</button>
         </section>
-
-        <section id="questions" class="hidden">
-            <div id ="question">It's not hidden!</div>
-            <div class="options">
-                <button class="btnChoice" id="0" onclick="checkAnswer('1')"></button> </br>
-                <button class="btnChoice" id="1" onclick="checkAnswer('2')"></button> </br>
-                <button class="btnChoice" id="2" onclick="checkAnswer('3')"></button> </br>
-                <button class="btnChoice" id="3" onclick="checkAnswer('4')"></button> </br>
-            </div> 
-            <div id="result"></div>
-        </section>
-
-        <section class="hidden" id="end-quiz">
-            <h1>Time's Up!</h1>
-            <p> 
-                "You finished with " 
-                <span id="time-remaining"></span>"."
-            </p>
-            <div id="scoreSubmit"></div>
-            <p>Enter initials to join scoreboard:</p>
-            <form><input type="text" id="name"></form>
-            <button id="submit">Submit</button>
-        </section>
-
-        <section class="hidden" id="scoreboard">
-            <h1>Scoreboard</h1>
-            <!--look back to taskinator for adding things to list/clearing-->
-            <button type="button" onclick="returnToRules()" id="home-page">Return to Quiz</button>
-
-        </section>
     </div>
+
+    <section id="questions" class="container hidden">
+        <div id ="question">It's not hidden!</div>
+        <div id="options" class="options">
+            <button class="btnChoice" id="0" onclick="checkAnswer('1')">Answer 1</button> </br>
+            <button class="btnChoice" id="1" onclick="checkAnswer('2')">Answer 2</button> </br>
+            <button class="btnChoice" id="2" onclick="checkAnswer('3')">Answer 3</button> </br>
+            <button class="btnChoice" id="3" onclick="checkAnswer('4')">Answer 4</button> </br>
+        </div> 
+        <div id="result"></div>
+    </section>
+
+    <section id="end-quiz" class="hidden">
+        <h1>Time's Up!</h1>
+        <p> 
+            "You finished with " 
+            <span id="time-remaining"></span>"."
+        </p>
+        <div id="scoreSubmit"></div>
+        <p>Enter initials to join scoreboard:</p>
+        <form><input type="text" id="name"></form>
+        <button id="submit">Submit</button>
+    </section>
+
+    <section id="scoreboard" class="hidden">
+        <h1 onclick="showScoreboard()">Scoreboard</h1>
+        <!--look back to taskinator for adding things to list/clearing-->
+        <button type="button" onclick="returnToRules()" id="home-page">Return to Quiz</button>
+
+    </section>
 
     <footer>
         Made in 2022 by Colleen Murray

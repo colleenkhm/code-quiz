@@ -9,12 +9,6 @@ const rules = document.getElementById("#quizRules");
 const questionsDisplay = document.getElementById("#questions");
 var questionDisplay = document.getElementById("#")
 
-
-// countdown timer
-var timeLeft = 60;
-var timerEnd = 0;
-var countdown = "";
-
 // questions/scoring
 var score = ""; // = time remaining?
 var question = "";
@@ -67,30 +61,21 @@ const questionsList = [
     },
 ]
 
-// function to hide everything from the displayed question
-// function removeChildren(parent) {
-//     while (parent.firstChild) {
-//         parent.removeChild(parent.firstChild);
-//     }
-// }
-// function to display new question on page
-function showQuestion() {
-    var q = questionsList[currentQuestion];
-
-    question.innerHTML = "<p>" + q.question + "</p>"
-}
+// set global variables that will change throughout quiz
+var time;
+var intervalId;
+var currentQuestion;
+document.querySelector("#start-button").addEventListener()
+// countdown timer
+time = questionsList.length * 10;
+intervalId = setInterval(countdown, 1000);
+displayTime()
 
 // function to show selected element/hide others
 function revealQuiz() {
-
-    for(var i = 0; i < questionsList.length; i++) {
-        if(question !== questionsList[i]) {
-            questions.classList.add("hidden")
-        }
-        else {
-            questions.classList.remove("hidden");
-        }
-    }
+    questions.classList.remove("hidden")
+    var q = questionsList[currentQuestion];
+    question.innerHTML = "<p>" + q.question + "</p>"
 };
 // function to display quiz/hide rules
 // function showQuiz() {
@@ -108,8 +93,12 @@ function startQuiz() {
     console.log("quiz has started")
     quizRules.classList.add("hidden")
     questions.classList.remove("hidden")
+    time = questionsList.length * 10;
+    intervalId = setInterval(countdown, 1000);
+    // displayTime();
     revealQuiz();
-    showQuestion();
+    
+    
     // for(var i=0; i < questions.length; i++) {
     //     var response = '';
     //     if (response === questions[i]) {
