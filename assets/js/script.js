@@ -4,7 +4,6 @@ const btnOption1 = document.getElementById("#0");
 const btnOption2 = document.getElementById("#1");
 const btnOption3 = document.getElementById("#2");
 const btnOption4 = document.getElementById("#3");
-const timer = document.getElementById("#timer");
 const rules = document.getElementById("#quizRules");
 const questionsDisplay = document.getElementById("#questions");
 var questionDisplay = document.getElementById("#")
@@ -61,15 +60,31 @@ const questionsList = [
     },
 ]
 
-// set global variables that will change throughout quiz
-var time;
+// countdown timer
 var intervalId;
 var currentQuestion;
-document.querySelector("#start-button").addEventListener()
-// countdown timer
-time = questionsList.length * 10;
-intervalId = setInterval(countdown, 1000);
-displayTime()
+const startingTime = 60;
+// document.querySelector("#start-button").addEventListener()
+
+setInterval(updateTime, 1000);
+function updateTime() {
+    const timerDisplay = document.getElementById("countdown");
+    let time = 60;
+    timerDisplay.innerHTML = `${time}`
+    time--;
+}
+updateTime();
+var i = time;
+    // const timerDisplay = document.getElementById("countdown");
+    // console.log("we're in the function")
+    // for (var i = 60; i > 0; i--) {
+    //     timerDisplay.innerHTML = `${time}`
+    // }
+// set original time
+// link OG time variable to dynamic time variable
+// create increment for time change
+// 
+
 
 // function to show selected element/hide others
 function revealQuiz() {
