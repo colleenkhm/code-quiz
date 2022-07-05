@@ -1,9 +1,11 @@
 // VARIABLES
 //__elements to link to html__
     // scoreboard
+    // const scoreboard = document.getElementById("#scoreboard");
         // scoreboard slot    
         // return to home
     // timer
+    const timerDisplay = document.getElementById("#countdown")
     // quiz rules
     const quizRules = document.getElementById("#quizRules");
     // question
@@ -36,6 +38,9 @@ function startQuiz() {
                 // subtracts from time
                 // removes hidden class from "incorrect" footer
     // when user clicks scoreboard, reveals scoreboard
+    function showHighScores() {
+        scoreboard.classList.remove("hidden")
+    }
         // when user clicks return to home, return to home
 
 const answerOne = document.getElementById("#0");
@@ -108,14 +113,7 @@ var time = 60;
 function updateTime() {
     const timerDisplay = document.getElementById("countdown");
     console.log("we're in the function")
-    for (var i = 60; i > 0; i--) {
-        if(time === 0){
-            clearInterval(time)
-        } else {
-        timerDisplay.innerHTML = `${time}`
-    }
-    };
-    let time = 60;
+    // let time = 60;
     timerDisplay.innerHTML = `${time}`
     time--;
 }
