@@ -1,9 +1,47 @@
-// variables/constants
-const btnStart = document.getElementById("#start");
-const btnOption1 = document.getElementById("#0");
-const btnOption2 = document.getElementById("#1");
-const btnOption3 = document.getElementById("#2");
-const btnOption4 = document.getElementById("#3");
+// VARIABLES
+//__elements to link to html__
+    // scoreboard
+        // scoreboard slot    
+        // return to home
+    // timer
+    // quiz rules
+    const quizRules = document.getElementById("#quizRules");
+    // question
+    // answer1
+    // answer2
+    // answer3
+    // answer4
+    // play again
+    // correct alert
+    const correctAlert = document.getElementById("#correct-alert");
+    // incorrect alert
+    const incorrectAlert = document.getElementById("#incorrect-alert");
+
+// FUNCTIONS
+// start quiz
+function startQuiz() {
+    console.log("quiz has started")
+    revealQuestion()
+}
+    // starts timer
+    // updateTime()
+        // when timer reaches 0, displays high scores
+    // hides instructions
+    // displays questions
+        // populates questions field
+        // assesses validity of answer
+            // alerts yes for correct answer
+                // removes hidden class from "correct" footer
+            // alerts no for incorrect answer
+                // subtracts from time
+                // removes hidden class from "incorrect" footer
+    // when user clicks scoreboard, reveals scoreboard
+        // when user clicks return to home, return to home
+
+const answerOne = document.getElementById("#0");
+const answerTwo = document.getElementById("#1");
+const answerThree = document.getElementById("#2");
+const answerFour = document.getElementById("#3");
 const rules = document.getElementById("#quizRules");
 const questionsDisplay = document.getElementById("#questions");
 var questionDisplay = document.getElementById("#")
@@ -65,21 +103,26 @@ var intervalId;
 var currentQuestion;
 const startingTime = 60;
 // document.querySelector("#start-button").addEventListener()
-
-setInterval(updateTime, 1000);
+var i = time;
+var time = 60;
 function updateTime() {
     const timerDisplay = document.getElementById("countdown");
+    console.log("we're in the function")
+    for (var i = 60; i > 0; i--) {
+        if(time === 0){
+            clearInterval(time)
+        } else {
+        timerDisplay.innerHTML = `${time}`
+    }
+    };
     let time = 60;
     timerDisplay.innerHTML = `${time}`
     time--;
 }
-updateTime();
-var i = time;
-    // const timerDisplay = document.getElementById("countdown");
-    // console.log("we're in the function")
-    // for (var i = 60; i > 0; i--) {
-    //     timerDisplay.innerHTML = `${time}`
-    // }
+
+setInterval(updateTime, 1000);
+
+
 // set original time
 // link OG time variable to dynamic time variable
 // create increment for time change
@@ -89,8 +132,9 @@ var i = time;
 // function to show selected element/hide others
 function revealQuiz() {
     questions.classList.remove("hidden")
+    updateTime();
     var q = questionsList[currentQuestion];
-    question.innerHTML = "<p>" + q.question + "</p>"
+    question.innerHTML = "<p>" + q + "</p>"
 };
 // function to display quiz/hide rules
 // function showQuiz() {
@@ -98,21 +142,12 @@ function revealQuiz() {
 // };
 
 
-// function to display new question on page
-var finalQuestion = questionsList.length - 1;
-var currentQuestion = 0;
-var count = 0;
-var questionDuration = 10;
-
 function startQuiz() {
     console.log("quiz has started")
     quizRules.classList.add("hidden")
     questions.classList.remove("hidden")
-    time = questionsList.length * 10;
-    intervalId = setInterval(countdown, 1000);
     // displayTime();
     revealQuiz();
-    
     
     // for(var i=0; i < questions.length; i++) {
     //     var response = '';
@@ -134,14 +169,6 @@ function showHighScores() {
 // event listener to start quiz
 // btnStart.addEventListener('click', startQuiz());
 highScores.addEventListener('click', showHighScores());
-
-function countdown() {
-    timeLeft--
-    timer.innerHTML = secondsLeft
-    if(secondsLeft === 0){
-        clearInterval(timerId)
-    }
-}
 
 
 // what's needed:

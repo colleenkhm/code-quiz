@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
@@ -13,7 +12,7 @@
 <body>
     <!--nav bar for high scores and time left-->
     <header>
-        <a onclick="showHighScores()" id="highScores"> View Scoreboard</a>
+        <button type="button" id="highScores" onclick="showHighScores()"> View Scoreboard</button>
         <div>
             <p>Time: </p>
             <p id="countdown"> </p>
@@ -39,6 +38,14 @@
         <div id="result"></div>
     </section>
 
+    <div id="correct-alert" class="hidden">
+        <p>Correct :)</p>
+    </div>
+
+    <div id="incorrect-alert" class="hidden">
+        <p>Incorrect :/</p>
+    </div>
+
     <section id="end-quiz" class="hidden">
         <h1>Time's Up!</h1>
         <p> 
@@ -52,9 +59,9 @@
     </section>
 
     <section id="scoreboard" class="hidden">
-        <h1 onclick="showScoreboard()">Scoreboard</h1>
+        <p>This is where high scores will go</p>
         <!--look back to taskinator for adding things to list/clearing-->
-        <button type="button" onclick="returnToRules()" id="home-page">Return to Quiz</button>
+        <!-- <button type="button" onclick="returnToRules()" id="home-page">Return to Quiz</button> -->
 
     </section>
 
@@ -62,6 +69,7 @@
         Made in 2022 by Colleen Murray
     </footer>
     <script src="assets\js\script.js"></script>
+
 </body>
 
 </html>
