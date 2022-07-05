@@ -12,57 +12,53 @@
 <body>
     <!--nav bar for high scores and time left-->
     <header>
-        <button type="button" id="high-scores" onclick="showHighScores()"> View Scoreboard</button>
+        <button type="button" id="highScores" onclick="showHighScores()"> View Scoreboard</button>
         <div>
             <p>Time: </p>
             <p id="countdown"> </p>
         </div>
     </header>
     <!--rules-->
-    <div class="container" id="quiz-rules">
+    <div class="container" id="quizRules">
         <section>
             <h1>Coding Quiz!</h1>
             <p>You will have one minute to answer as many multiple choice questions about JavaScript as you can. Each wrong answer will result in 5 seconds being deducted from your time. Your score will be determined by the time remaining when you finish the quiz, but feel free to retake it as many times as you'd like to try and improve your high score. Good luck!</p>
-            <button type="button" onclick="startQuiz()" id="start_btn">Start Quiz</button>
+            <button type="button" onclick="startQuiz()" id="start-button">Start Quiz</button>
         </section>
     </div>
 
-    <section id="questions" class="container hidden">
-        <div id ="question">It's not hidden!</div>
+    <section id="questionsDisplay" class="container hidden">
+        <div id ="questionShown"></div>
         <div id="options" class="options">
-            <button class="btnChoice" id="0" onclick="checkAnswer('1')">Answer 1</button> </br>
-            <button class="btnChoice" id="1" onclick="checkAnswer('2')">Answer 2</button> </br>
-            <button class="btnChoice" id="2" onclick="checkAnswer('3')">Answer 3</button> </br>
-            <button class="btnChoice" id="3" onclick="checkAnswer('4')">Answer 4</button> </br>
+            <button class="answerChoice" id="choice1" onclick="checkAnswer('1')"></button> </br>
+            <button class="answerChoice" id="choice2" onclick="checkAnswer('2')"></button> </br>
+            <button class="answerChoice" id="choice3" onclick="checkAnswer('3')"></button> </br>
+            <button class="answerChoice" id="choice4" onclick="checkAnswer('4')"></button> </br>
         </div> 
-        <div id="result"></div>
+        <div id="correctAlert" class="hidden">
+            <p>Correct!</p>
+        </div>
+        <div id="incorrectAlert" class="hidden">
+            <p>Incorrect!</p>
+        </div>
     </section>
 
-    <div id="correct-alert" class="hidden">
-        <p>Correct :)</p>
-    </div>
-
-    <div id="incorrect-alert" class="hidden">
-        <p>Incorrect :/</p>
-    </div>
-
-    <section id="end-quiz" class="hidden">
+    <section id="endQuiz" class="hidden">
         <h1>Time's Up!</h1>
         <p> 
             "You finished with " 
-            <span id="time-remaining"></span>"."
+            <span id="timeRemaining"></span>"."
         </p>
         <div id="scoreSubmit"></div>
         <p>Enter initials to join scoreboard:</p>
         <form><input type="text" id="name"></form>
-        <button id="submit">Submit</button>
+        <button type="submit" id="submit">Submit</button>
     </section>
 
-    <section id="scoreboard" class="hidden">
+    <section id="scoreboard" class="container">
+        <div class="hidden">
         <p>This is where high scores will go</p>
-        <!--look back to taskinator for adding things to list/clearing-->
-        <!-- <button type="button" onclick="returnToRules()" id="home-page">Return to Quiz</button> -->
-
+        </div>
     </section>
 
     <footer>
@@ -73,17 +69,3 @@
 </body>
 
 </html>
-
-<!--what's needed:
--view high scores button
--timer
--title "Coding Quiz!"
--text info for starting quiz
--start button
-
-questions
-
-end game
--display score
--option to add score to high scores by entering username
--->
